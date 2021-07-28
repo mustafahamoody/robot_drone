@@ -16,11 +16,9 @@ tello.connect()
 print('Battery at:', tello.get_battery(), '%')
 time.sleep(3)
 
-tello.streamon
+tello.streamon()
 frame_read = tello.get_frame_read()
 
-if key == 32:  # space
-    tello.takeoff()
 
 while True:
     # In reality you want to display frames in a seperate thread. Otherwise
@@ -31,6 +29,9 @@ while True:
     key = cv2.waitKey(1) & 0xff
     if key == 27:  # ESC
         break
+    elif key == 32:
+        tello.takeoff()
+
     elif key == ord('w'):
         tello.move_forward(30)
     elif key == ord('s'):
