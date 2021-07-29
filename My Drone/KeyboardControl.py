@@ -29,7 +29,7 @@ while True:
     key = cv2.waitKey(1) & 0xff
     if key == 27:  # ESC
         break
-    elif key == 32:
+    elif key == 32:  # Space
         tello.takeoff()
 
     elif key == ord('w'):
