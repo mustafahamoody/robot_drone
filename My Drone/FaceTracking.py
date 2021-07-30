@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from djitellopy import Tello
-
+import time
 
 me = tello.Tello()
 me.connect()
@@ -9,8 +9,8 @@ print('Battery at:', me.get_battery(), '%')
 
 me.stream_on
 me.takeoff()
-me.send_rc_control(0, 0, 25, 0, )
-time.sleep(2.2)
+# me.send_rc_control(0, 0, 25, 0, )
+# time.sleep(2.2)
 
 w, h = 360, 240
 fbRange = [6200, 6800]
